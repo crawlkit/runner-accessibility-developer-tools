@@ -19,6 +19,9 @@
   ],
   "author": "Joscha Feth <joscha@feth.com>",
   "license": "MIT",
+  "files": [
+    "index.js"
+  ],
   "bugs": {
     "url": "https://github.com/crawlkit/runner-accessibility-developer-tools/issues"
   },
