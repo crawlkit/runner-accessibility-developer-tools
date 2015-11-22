@@ -4,7 +4,7 @@ const path = require('path');
 class A11yDeveloperToolsRunner {
     getCompanionFiles() {
         return [
-            path.join(__dirname, 'node_modules', 'accessibility-developer-tools', 'dist/js/axs_testing.js'),
+            require.resolve(path.join('accessibility-developer-tools', 'dist', 'js', 'axs_testing.js')),
         ];
     }
 
