@@ -1,4 +1,9 @@
-# Google Chrome Accessibility Developer Tools runner for CrawlKit [![Build Status](https://travis-ci.org/crawlkit/runner-accessibility-developer-tools.svg?branch=master)](https://travis-ci.org/crawlkit/runner-accessibility-developer-tools)
+# Google Chrome Accessibility Developer Tools runner
+[![Build status](https://img.shields.io/travis/crawlkit/runner-accessibility-developer-tools/master.svg)](https://travis-ci.org/crawlkit/runner-accessibility-developer-tools)
+[![npm](https://img.shields.io/npm/v/crawlkit-runner-accessibility-developer-tools.svg)](https://github.com/crawlkit/runner-accessibility-developer-tools)
+[![npm](https://img.shields.io/npm/l/crawlkit-runner-accessibility-developer-tools.svg)]()
+[![David](https://img.shields.io/david/crawlkit/runner-accessibility-developer-tools.svg)]()
+[![node](https://img.shields.io/node/v/crawlkit-runner-accessibility-developer-tools.svg)]()
 
 This runner can be used with [CrawlKit](https://github.com/crawlkit/crawlkit) in order to audit a website with the [Google Chrome Accessibility Developer Tools](https://github.com/GoogleChrome/accessibility-developer-tools).
 
