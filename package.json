@@ -15,7 +15,8 @@
   "keywords": [
     "crawlkit",
     "a11y",
-    "accessibility"
+    "accessibility",
+    "axs"
   ],
   "author": "Joscha Feth <joscha@feth.com>",
   "license": "MIT",
