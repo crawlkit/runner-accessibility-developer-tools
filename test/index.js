@@ -1,12 +1,14 @@
 'use strict'; // eslint-disable-line
 const A11yDeveloperToolsRunner = require('../');
 const chai = require('chai');
+const chaiAsPromised = require('chai-as-promised');
 const CrawlKit = require('crawlkit');
 const freeport = require('freeport');
 const httpServer = require('http-server');
 const path = require('path');
 
 chai.should();
+chai.use(chaiAsPromised);
 
 describe('Google Chrome Accessibility Developer Tools runner', function main() {
     this.timeout(60 * 1000); // auditing can take a while
@@ -34,7 +36,7 @@ describe('Google Chrome Accessibility Developer Tools runner', function main() {
         server.close();
     });
 
-    it('should be able to audit a website', (done) => {
+    it('should be able to audit a website', () => {
         const crawler = new CrawlKit(url);
         crawler.addRunner('a11y-dev-tools', new A11yDeveloperToolsRunner());
 
@@ -46,9 +48,6 @@ describe('Google Chrome Accessibility Developer Tools runner', function main() {
                 },
             },
         };
-        crawler.crawl().then((result) => {
-            result.should.deep.equal({results});
-            done();
-        });
+        return crawler.crawl().should.eventually.deep.equal({results});
     });
 });
