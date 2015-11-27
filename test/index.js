@@ -1,11 +1,12 @@
 'use strict'; // eslint-disable-line
-const A11yDeveloperToolsRunner = require('../');
+const path = require('path');
+const pkg = require('../package.json');
+const A11yDeveloperToolsRunner = require(path.join(__dirname, '..', pkg.main));
 const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 const CrawlKit = require('crawlkit');
 const freeport = require('freeport');
 const httpServer = require('http-server');
-const path = require('path');
 
 chai.should();
 chai.use(chaiAsPromised);
