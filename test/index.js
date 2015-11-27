@@ -51,4 +51,20 @@ describe('Google Chrome Accessibility Developer Tools runner', function main() {
         };
         return crawler.crawl().should.eventually.deep.equal({results});
     });
+
+    it('should work on a website with require', () => {
+        const amdUrl = `${url}/amd.html`;
+        const crawler = new CrawlKit(amdUrl);
+        crawler.addRunner('a11y-dev-tools', new A11yDeveloperToolsRunner());
+
+        const results = {};
+        results[amdUrl] = {
+            runners: {
+                'a11y-dev-tools': {
+                    result: require(path.join(__dirname, 'fixtures/results/index.json')),
+                },
+            },
+        };
+        return crawler.crawl().should.eventually.deep.equal({results});
+    });
 });

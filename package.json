@@ -2,7 +2,7 @@
   "name": "crawlkit-runner-accessibility-developer-tools",
   "version": "1.0.3",
   "description": "A CrawlKit runner for running the Google Chrome a11y developer tools",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "mocha",
     "lint": "eslint .",
@@ -21,13 +21,14 @@
   "author": "Joscha Feth <joscha@feth.com>",
   "license": "MIT",
   "files": [
-    "index.js"
+    "src"
   ],
   "bugs": {
     "url": "https://github.com/crawlkit/runner-accessibility-developer-tools/issues"
   },
   "homepage": "https://github.com/crawlkit/runner-accessibility-developer-tools#readme",
   "devDependencies": {
+    "almond": "^0.3.1",
     "chai": "^3.4.1",
     "chai-as-promised": "^5.1.0",
     "crawlkit": "^1.1.0",
