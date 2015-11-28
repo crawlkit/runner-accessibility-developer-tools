@@ -1,6 +1,6 @@
 {
   "name": "crawlkit-runner-accessibility-developer-tools",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A CrawlKit runner for running the Google Chrome a11y developer tools",
   "main": "src/index.js",
   "scripts": {
