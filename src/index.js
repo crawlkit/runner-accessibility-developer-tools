@@ -11,14 +11,13 @@ class A11yDeveloperToolsRunner {
         ];
     }
 
-    /* global axs:false */
     getRunnable() {
-        /*eslint-disable */
+        /* global axs:false */
+        /* eslint-disable no-var */
         return function axsRunner() {
             var results = axs.Audit.run();
             window.callPhantom(null, axs.Audit.auditResults(results));
         };
-        /*eslint-enable */
     }
 }
 module.exports = A11yDeveloperToolsRunner;
