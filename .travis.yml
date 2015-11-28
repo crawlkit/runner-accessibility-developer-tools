@@ -5,3 +5,5 @@ node_js:
 script:
   - npm run lint
   - npm test
+  - npm link --silent && npm link crawlkit-runner-accessibility-developer-tools --silent
+  - travis_retry node examples/tonic.js
