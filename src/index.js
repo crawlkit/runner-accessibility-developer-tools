@@ -13,9 +13,11 @@ class A11yDeveloperToolsRunner {
 
     getRunnable() {
         /* global axs:false */
-        /* eslint-disable no-var */
+        /* eslint-disable no-var, vars-on-top */
         return function axsRunner() {
-            var results = axs.Audit.run();
+            var configuration = new axs.AuditConfiguration();
+            configuration.showUnsupportedRulesWarning = false;
+            var results = axs.Audit.run(configuration);
             window.callPhantom(null, axs.Audit.auditResults(results));
         };
     }
