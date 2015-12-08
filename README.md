@@ -24,7 +24,7 @@ crawler.addRunner('a11y-dev-tools', new A11yDeveloperToolsRunner());
 crawler.crawl()
     .then((data) => {
         console.log(JSON.stringify(data.results, true, 2));
-    });
+    }, (err) => console.error(err));
 ```
 
 This project is in no way affiliated with Google, Inc.
