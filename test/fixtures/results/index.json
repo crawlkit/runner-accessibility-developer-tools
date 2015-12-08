@@ -1,6 +1,61 @@
 {
-  "errors_": [],
-  "warnings_": [
-    "Warning: AX_TITLE_01 (The web page should have a title that describes topic or purpose) failed on the following element:\nhtml\nSee https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_title_01 for more information."
+  "errors": [
+      {
+          "code": "AX_TEXT_01",
+          "msg": "Controls and media elements should have labels",
+          "helpUrl": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_text_01",
+          "elements": [
+              {
+                  "selector": "#no-label",
+                  "context": "<input id=\"no-label\">"
+              }
+          ]
+      }
+  ],
+  "warnings": [
+      {
+          "code": "AX_FOCUS_01",
+          "msg": "These elements are focusable but either invisible or obscured by another element",
+          "helpUrl": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_focus_01",
+          "elements": [
+              {
+                  "selector": "A:nth-of-type(2)",
+                  "context": "<a href=\"#no-link-text\"></a>"
+              }
+          ]
+      },
+      {
+          "code": "AX_TEXT_02",
+          "msg": "Images should have a text alternative or presentational role",
+          "helpUrl": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_text_02",
+          "elements": [
+              {
+                  "selector": "IMG",
+                  "context": "<img src=\"no-alt\">"
+              }
+          ]
+      },
+      {
+          "code": "AX_TEXT_04",
+          "msg": "The purpose of each link should be clear from the link text",
+          "helpUrl": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_text_04",
+          "elements": [
+              {
+                  "selector": "A:nth-of-type(2)",
+                  "context": "<a href=\"#no-link-text\"></a>"
+              }
+          ]
+      },
+      {
+          "code": "AX_TITLE_01",
+          "msg": "The web page should have a title that describes topic or purpose",
+          "helpUrl": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_title_01",
+          "elements": [
+              {
+                  "selector": "html",
+                  "context":  "<html lang=\"en\"><head></head><body><a href=\"\" onclick=\"window.location.href = 'http://www.google.com';\">no href</a>\n  <a href=\"#no-link-text\"></a>\n  <img src=\"no-alt\">\n  <input id=\"no-label\">\n\n</body></html>"
+              }
+          ]
+      }
   ]
 }
