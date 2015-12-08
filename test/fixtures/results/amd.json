@@ -1,0 +1,17 @@
+{
+  "errors": [
+  ],
+  "warnings": [
+      {
+          "code": "AX_TITLE_01",
+          "msg": "The web page should have a title that describes topic or purpose",
+          "helpUrl": "https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_title_01",
+          "elements": [
+              {
+                  "selector": "html",
+                  "context": "<html lang=\"en\"><head><script src=\"js/almond.js\"></script>\n  </head><body><a href=\"\" onclick=\"window.location.href = 'http://www.google.com';\">no href</a>\n\n</body></html>"
+              }
+          ]
+      }
+  ]
+}

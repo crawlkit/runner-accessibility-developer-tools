@@ -7,18 +7,54 @@ class A11yDeveloperToolsRunner {
             // ah, the things your eyes have seen now...
             path.join(__dirname, 'amd.undefine.js'),
             require.resolve(path.join('accessibility-developer-tools', 'dist', 'js', 'axs_testing.js')),
+            require.resolve(path.join('html-context', 'dist', 'index.js')),
             path.join(__dirname, 'amd.redefine.js'),
         ];
     }
 
     getRunnable() {
-        /* global axs:false */
+        /* global axs:false, htmlContext:false */
         /* eslint-disable no-var, vars-on-top */
         return function axsRunner() {
             var configuration = new axs.AuditConfiguration();
             configuration.showUnsupportedRulesWarning = false;
             var results = axs.Audit.run(configuration);
-            window.callPhantom(null, axs.Audit.auditResults(results));
+
+            /**
+            * @param line {!String} The error line, something like: "Warning: ERROR_CODE (Description) failed on the following element:\nhtml\nSee https://link for more information
+            */
+            function parseError(line) {
+                var lines = line.split('\n');
+
+                var matches = lines.shift().match(/^(?:Warning|Error): ([A-Z0-9_]+) \((.*)\) failed on the following element:$/);
+                var urlMatches = lines.pop().match(/^See (.*) for more information\.$/);
+
+                var ret = {
+                    code: matches[1],
+                    elements: lines.map(function selectorToContext(selector) {
+                        return {
+                            selector: selector,
+                            context: htmlContext(document.querySelector(selector), { maxLength: 255 }),
+                        };
+                    }),
+                    msg: matches[2],
+                    helpUrl: urlMatches[1],
+                };
+                return ret;
+            }
+
+            function reformat(res) {
+                if (!res) {
+                    return res;
+                }
+
+                return {
+                    errors: res.errors_.map(parseError),
+                    warnings: res.warnings_.map(parseError),
+                };
+            }
+
+            window.callPhantom(null, reformat(axs.Audit.auditResults(results)));
         };
     }
 }

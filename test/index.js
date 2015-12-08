@@ -61,7 +61,7 @@ describe('Google Chrome Accessibility Developer Tools runner', function main() {
         results[amdUrl] = {
             runners: {
                 'a11y-dev-tools': {
-                    result: require(path.join(__dirname, 'fixtures/results/index.json')),
+                    result: require(path.join(__dirname, 'fixtures/results/amd.json')),
                 },
             },
         };
