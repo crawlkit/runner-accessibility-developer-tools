@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; // eslint-disable-line
 
 const CrawlKit = require('crawlkit');
 const A11yDeveloperToolsRunner = require('crawlkit-runner-accessibility-developer-tools');
