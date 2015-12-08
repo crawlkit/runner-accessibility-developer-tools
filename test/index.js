@@ -28,7 +28,7 @@ describe('Google Chrome Accessibility Developer Tools runner', function main() {
                 root: path.join(__dirname, 'fixtures', 'website'),
             });
             server.listen(port);
-            url = `http://${host}:${port}`;
+            url = `http://${host}:${port}/`;
             done();
         });
     });
@@ -42,7 +42,7 @@ describe('Google Chrome Accessibility Developer Tools runner', function main() {
         crawler.addRunner('a11y-dev-tools', new A11yDeveloperToolsRunner());
 
         const results = {};
-        results[`${url}/`] = {
+        results[url] = {
             runners: {
                 'a11y-dev-tools': {
                     result: require(path.join(__dirname, 'fixtures/results/index.json')),
@@ -53,7 +53,7 @@ describe('Google Chrome Accessibility Developer Tools runner', function main() {
     });
 
     it('should work on a website with require', () => {
-        const amdUrl = `${url}/amd.html`;
+        const amdUrl = `${url}amd.html`;
         const crawler = new CrawlKit(amdUrl);
         crawler.addRunner('a11y-dev-tools', new A11yDeveloperToolsRunner());
 
