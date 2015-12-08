@@ -49,7 +49,7 @@ describe('Google Chrome Accessibility Developer Tools runner', function main() {
                 },
             },
         };
-        return crawler.crawl().should.eventually.deep.equal({results});
+        return crawler.crawl().should.eventually.deep.equal({ results });
     });
 
     it('should work on a website with require', () => {
@@ -65,6 +65,6 @@ describe('Google Chrome Accessibility Developer Tools runner', function main() {
                 },
             },
         };
-        return crawler.crawl().should.eventually.deep.equal({results});
+        return crawler.crawl().should.eventually.deep.equal({ results });
     });
 });
