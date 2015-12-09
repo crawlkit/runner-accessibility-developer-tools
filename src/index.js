@@ -25,8 +25,7 @@ class A11yDeveloperToolsRunner {
             */
             function parseError(line) {
                 var lines = line.split('\n');
-
-                var matches = lines.shift().match(/^(?:Warning|Error): ([A-Z0-9_]+) \((.*)\) failed on the following element:$/);
+                var matches = lines.shift().match(/^.+?: ([A-Z0-9_]+) \((.*)\) failed on the following element.+$/);
                 var urlMatches = lines.pop().match(/^See (.*) for more information\.$/);
 
                 var ret = {
