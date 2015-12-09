@@ -44,7 +44,7 @@
     "html-context": "^1.0.5"
   },
   "peerDependencies": {
-    "crawlkit": ">= 1.1.0"
+    "crawlkit": ">=1.5.4"
   },
   "engines": {
     "node": ">=4.2"
