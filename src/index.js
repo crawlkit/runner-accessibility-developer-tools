@@ -14,7 +14,7 @@ class A11yDeveloperToolsRunner {
 
     getRunnable() {
         /* global axs:false, htmlContext:false */
-        /* eslint-disable no-var, vars-on-top */
+        /* eslint-disable no-var, vars-on-top, no-console */
         return function axsRunner() {
             var configuration = new axs.AuditConfiguration();
             configuration.showUnsupportedRulesWarning = false;
@@ -31,9 +31,20 @@ class A11yDeveloperToolsRunner {
                 var ret = {
                     code: matches[1],
                     elements: lines.map(function selectorToContext(selector) {
+                        var context = null;
+                        if (selector) {
+                            var domElement = document.querySelector(selector);
+                            if (domElement instanceof window.HTMLElement) {
+                                try {
+                                    context = htmlContext(domElement, { maxLength: 255 });
+                                } catch (e) {
+                                    console.error(e);
+                                }
+                            }
+                        }
                         return {
                             selector: selector,
-                            context: htmlContext(document.querySelector(selector), { maxLength: 255 }),
+                            context: context,
                         };
                     }),
                     msg: matches[2],
