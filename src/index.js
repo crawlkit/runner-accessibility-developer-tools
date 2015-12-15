@@ -14,7 +14,7 @@ class A11yDeveloperToolsRunner {
 
     getRunnable() {
         /* global axs:false, htmlContext:false */
-        /* eslint-disable no-var, vars-on-top, no-console */
+        /* eslint-disable no-var, vars-on-top, no-console, object-shorthand */
         return function axsRunner() {
             var configuration = new axs.AuditConfiguration();
             configuration.showUnsupportedRulesWarning = false;
