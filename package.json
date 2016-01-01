@@ -32,7 +32,7 @@
     "almond": "^0.3.1",
     "chai": "^3.4.1",
     "chai-as-promised": "^5.2.0",
-    "crawlkit": "^1.5.6",
+    "crawlkit": "^1.5.9",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^2.1.1",
     "freeport": "^1.0.5",
