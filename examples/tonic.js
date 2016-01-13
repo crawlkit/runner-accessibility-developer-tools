@@ -8,6 +8,6 @@ crawler.addRunner('a11y-dev-tools', new A11yDeveloperToolsRunner());
 
 /* eslint-disable no-console */
 crawler.crawl()
-    .then((data) => {
-        console.log(JSON.stringify(data.results, true, 2));
-    }, (err) => console.error(err));
+  .then((data) => {
+    console.log(JSON.stringify(data.results, true, 2));
+  }, (err) => console.error(err));
