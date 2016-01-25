@@ -5,4 +5,4 @@
     root.define.amd = false;
     /* eslint-enable no-param-reassign */
   }
-})(this);
+}(this));
