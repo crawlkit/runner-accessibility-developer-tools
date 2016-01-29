@@ -1,16 +1,16 @@
 {
   "name": "crawlkit-runner-accessibility-developer-tools",
-  "version": "1.1.2",
   "description": "A CrawlKit runner for running the Google Chrome a11y developer tools",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha",
     "lint": "eslint .",
-    "tdd": "mocha --watch --reporter min"
+    "tdd": "mocha --watch --reporter min",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/crawlkit/runner-accessibility-developer-tools.git"
+    "url": "https://github.com/crawlkit/runner-accessibility-developer-tools.git"
   },
   "keywords": [
     "crawlkit",
@@ -38,7 +38,8 @@
     "eslint-config-airbnb": "^4.0.0",
     "freeport": "^1.0.5",
     "http-server": "^0.8.5",
-    "mocha": "^2.3.4"
+    "mocha": "^2.3.4",
+    "semantic-release": "^4.3.5"
   },
   "dependencies": {
     "accessibility-developer-tools": "^2.10.0",
