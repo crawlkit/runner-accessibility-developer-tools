@@ -5,6 +5,7 @@
   "scripts": {
     "test": "mocha",
     "lint": "eslint .",
+    "postinstall": "validate-commit-msg",
     "tdd": "mocha --watch --reporter min",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
@@ -39,7 +40,8 @@
     "freeport": "^1.0.5",
     "http-server": "^0.8.5",
     "mocha": "^2.3.4",
-    "semantic-release": "^4.3.5"
+    "semantic-release": "^4.3.5",
+    "validate-commit-message": "^3.0.1"
   },
   "dependencies": {
     "accessibility-developer-tools": "^2.10.0",
