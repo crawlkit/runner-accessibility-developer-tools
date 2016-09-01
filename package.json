@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/crawlkit/runner-accessibility-developer-tools#readme",
   "devDependencies": {
-    "almond": "^0.3.2",
+    "almond": "^0.3.3",
     "chai": "^3.5.0",
     "chai-as-promised": "^5.3.0",
     "crawlkit": "^2.0.1",
