@@ -32,7 +32,7 @@
   "devDependencies": {
     "almond": "^0.3.2",
     "chai": "^3.5.0",
-    "chai-as-promised": "^5.3.0",
+    "chai-as-promised": "^6.0.0",
     "crawlkit": "^2.0.1",
     "cz-conventional-changelog": "^1.1.7",
     "eslint": "^2.8.0",
