@@ -5,7 +5,7 @@
   "scripts": {
     "test": "mocha",
     "lint": "eslint .",
-    "postinstall": "validate-commit-msg",
+    "pretest": "validate-commit-msg",
     "tdd": "mocha --watch --reporter min",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
